@@ -13,8 +13,13 @@ if(keyboard_check_pressed(vk_shift)){
 	if(run = 0){
 		run = 1;	
 	}else{
-		run = 0;	
+		run = 0;
 	}
+}
+
+//Jump Animation Stuff
+if(up){
+	jump_anim = true;	
 }
 
 //Calculates movement
