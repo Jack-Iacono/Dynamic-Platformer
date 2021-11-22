@@ -17,11 +17,6 @@ if(keyboard_check_pressed(vk_shift)){
 	}
 }
 
-//Jump Animation Stuff
-if(up){
-	jump_anim = true;	
-}
-
 //Calculates movement
 
 if(run){
@@ -34,6 +29,9 @@ vsp += grav - (jump_height * up);
 
 
 //Runs Collision Check
+h_moving = instance_place(x+hsp,y,obj_moving_platform);
+v_moving = instance_place(x,y+vsp,obj_moving_platform);
+
 if(place_meeting(x + hsp, y, obj_wall)){
 		
 	while(!place_meeting(x + sign(hsp), y, obj_wall)){
@@ -53,7 +51,12 @@ if(place_meeting(x, y + vsp, obj_wall)){
 	while(!place_meeting(x, y + sign(vsp), obj_wall)){
 		y += sign(vsp);
 	}
-	vsp = 0;
+	
+	if(v_moving){
+		
+	}else{
+		vsp = 0;
+	}
 }
 
 y += vsp;
