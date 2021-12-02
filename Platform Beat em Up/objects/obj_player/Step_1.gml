@@ -21,11 +21,13 @@ if(moving_collide_h){
 	x_moving_post = 0;
 }
 
+//Moves based on platform
 if(moving_collide_v){
 	y_moving = (y - moving_collide_v.y) + moving_collide_v.y;
 	y = y_moving;
 	
-	while(place_meeting(x,y,obj_moving_platform)){
+	//Moves player up to avoid getting stuck in platform
+	while(place_meeting(x,y,obj_moving_platform) && !place_empty(x,y+1,obj_wall)){
 		y--;	
 	}	
 }
