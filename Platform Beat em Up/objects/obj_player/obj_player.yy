@@ -36,8 +36,8 @@
     {"varType":0,"value":"0.98","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"grav","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"20","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"jump_height","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":4,"value":"walk_speed * 2","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"run_speed","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":4,"value":"sprite_width / 2","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"hitbox_offset_x","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":4,"value":"sprite_width / 2","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"hitbox_offset_y","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":4,"value":"(sprite_width / 2) + 5","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"hitbox_offset_x","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":4,"value":"(sprite_width / 2)  + 5","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"hitbox_offset_y","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {

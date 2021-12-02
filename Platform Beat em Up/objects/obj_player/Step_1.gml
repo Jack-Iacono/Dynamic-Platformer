@@ -1,7 +1,7 @@
 /// @description Some more collision
 
 //Runs Collision Check for moving platform
-moving_collide_h = collision_rectangle(x+ hitbox_offset_x,y,x - hitbox_offset_x,y - (hitbox_offset_y * 2),obj_moving_platform,false,false);
+moving_collide_h = collision_rectangle(x+ hitbox_offset_x,y + hitbox_offset_y,x - hitbox_offset_x,y - hitbox_offset_y, obj_moving_platform,false,false);
 moving_collide_v = instance_place(x,y+vsp,obj_moving_platform);
 
 //Moving Block Collisions
@@ -12,12 +12,13 @@ if(moving_collide_h){
 		hsp_move = 0;
 	}else{
 		hsp_move = x_moving_pre - x_moving_post;
-		//hsp_move = x_moving_post - x_moving_pre;
 	}
 	
 	x_moving_post = x_moving_pre;
 }else{
-	hsp_move = 0;	
+	hsp_move = 0;
+	x_moving_pre = 0;
+	x_moving_post = 0;
 }
 
 if(moving_collide_v){
