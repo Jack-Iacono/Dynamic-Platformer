@@ -1,3 +1,6 @@
 /// @description Initialize variables
 
-path_start(moving_platform, 5, path_action_reverse, false);
+path_start(path_name, plat_speed, path_action_reverse, false);
+
+post_y = y;
+post_x = x;

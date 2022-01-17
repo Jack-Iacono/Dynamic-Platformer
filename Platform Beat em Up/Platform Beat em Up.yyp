@@ -1,6 +1,8 @@
 {
   "resources": [
-    {"id":{"name":"moving_platform","path":"paths/moving_platform/moving_platform.yy",},"order":0,},
+    {"id":{"name":"obj_moving_platform_V","path":"objects/obj_moving_platform_V/obj_moving_platform_V.yy",},"order":3,},
+    {"id":{"name":"moving_platform_V","path":"paths/moving_platform_V/moving_platform_V.yy",},"order":1,},
+    {"id":{"name":"moving_platform_U","path":"paths/moving_platform_U/moving_platform_U.yy",},"order":0,},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":1,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
@@ -52,7 +54,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.7.603",
+    "IDEVersion": "2.3.7.606",
   },
   "resourceVersion": "1.4",
   "name": "Platform Beat em Up",

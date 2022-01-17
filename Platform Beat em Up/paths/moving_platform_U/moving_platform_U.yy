@@ -20,7 +20,7 @@
     "path": "folders/Paths.yy",
   },
   "resourceVersion": "1.0",
-  "name": "moving_platform",
+  "name": "moving_platform_U",
   "tags": [],
   "resourceType": "GMPath",
 }

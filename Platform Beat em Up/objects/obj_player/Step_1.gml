@@ -22,12 +22,17 @@ if(moving_collide_h){
 }
 
 //Moves based on platform
-if(moving_collide_v){
+if(moving_collide_v && y <= moving_collide_v.y){
+	
 	y_moving = (y - moving_collide_v.y) + moving_collide_v.y;
 	y = y_moving;
 	
 	//Moves player up to avoid getting stuck in platform
 	while(place_meeting(x,y,obj_moving_platform) && !place_empty(x,y+1,obj_wall)){
-		y--;	
+		y--;
 	}	
+}else if(moving_collide_v && y > moving_collide_v.y){
+	y += moving_collide_v.cur_v_speed;
+	vsp = 0 + grav;
+	show_debug_message(string(moving_collide_v.cur_v_speed));
 }

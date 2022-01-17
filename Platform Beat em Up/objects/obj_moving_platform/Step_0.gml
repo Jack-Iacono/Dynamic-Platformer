@@ -1,1 +1,10 @@
-/// @description Adjusts the path speed
+/// @description Sets how fast the platform is currently moving
+
+pre_y = y;
+pre_x = x;
+
+cur_v_speed = pre_y - post_y;
+cur_h_speed = pre_x - post_x;
+
+post_y = pre_y;
+post_x = pre_x;
