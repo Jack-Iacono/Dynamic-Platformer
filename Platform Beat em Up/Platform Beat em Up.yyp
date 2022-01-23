@@ -7,7 +7,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
     {"id":{"name":"obj_moving_platform","path":"objects/obj_moving_platform/obj_moving_platform.yy",},"order":2,},
-    {"id":{"name":"jump_curve","path":"animcurves/jump_curve/jump_curve.yy",},"order":0,},
+    {"id":{"name":"curve_movement_accel","path":"animcurves/curve_movement_accel/curve_movement_accel.yy",},"order":0,},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":0,},
     {"id":{"name":"spr_moving","path":"sprites/spr_moving/spr_moving.yy",},"order":2,},
     {"id":{"name":"Animations","path":"scripts/Animations/Animations.yy",},"order":0,},
