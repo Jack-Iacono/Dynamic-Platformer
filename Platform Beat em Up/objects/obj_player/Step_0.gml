@@ -42,7 +42,7 @@ if(hsp != 0){
 //Applies Gravity
 vsp += grav - (jump_height * up);
 
-//Stationary Block Collisions
+//Runs Collision for movement via input
 if(place_meeting(x + hsp, y, obj_wall)){
 		
 	while(!place_meeting(x + sign(hsp), y, obj_wall)){
@@ -50,8 +50,20 @@ if(place_meeting(x + hsp, y, obj_wall)){
 		x += sign(hsp);
 		
 	}
-	
+
 	hsp = 0;
+}
+
+//Runs collision check for momentum
+if(place_meeting(x + momentum, y, obj_wall)){
+		
+	while(!place_meeting(x + sign(momentum), y, obj_wall)){
+		
+		x += sign(momentum);
+		
+	}
+
+	momentum = 0;
 }
 
 //Actually Moves the Player
