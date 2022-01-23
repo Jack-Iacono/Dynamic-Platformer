@@ -28,6 +28,4 @@ run_curve = animcurve_get(curve_movement_accel);
 walk_channel = animcurve_get_channel(run_curve, "player_walk");
 run_channel = animcurve_get_channel(run_curve, "player_run");
 
-/*
-walk_curve_pos = animcurve_channel_evaluate(walk_channel)
-run_curve_pos = */
+accel_pos = 0;

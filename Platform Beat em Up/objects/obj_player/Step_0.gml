@@ -1,6 +1,5 @@
 /// @description Take movement inputs
 
-
 //Takes Keyboard Input
 right = keyboard_check(ord("D"));
 left = keyboard_check(ord("A"));
@@ -12,6 +11,13 @@ if(place_meeting(x,y+1,obj_wall)){
 	up = 0;
 }
 
+//Increments along accel curve given current speed
+if((right || left) && accel_pos < 1){
+	accel_pos += 0.025;
+}else if(!right && !left){
+	accel_pos = 0;	
+}
+
 //Running Switch
 if(keyboard_check_pressed(vk_shift)){
 	if(run = 0){
@@ -21,11 +27,15 @@ if(keyboard_check_pressed(vk_shift)){
 	}
 }
 
-//Calculates movement
+//Calculates movement and acceleration
 if(run){
 	hsp = (right - left) * run_speed;
+	accel_speed = animcurve_channel_evaluate(run_channel,accel_pos);
+	hsp *= accel_speed;
 }else{
 	hsp = (right - left) * walk_speed;
+	accel_speed = animcurve_channel_evaluate(walk_channel,accel_pos);
+	hsp *= accel_speed;
 }
 
 //Calculates Momentum
@@ -65,6 +75,7 @@ if(place_meeting(x + momentum, y, obj_wall)){
 
 	momentum = 0;
 }
+
 
 //Actually Moves the Player
 if(hsp = 0){
