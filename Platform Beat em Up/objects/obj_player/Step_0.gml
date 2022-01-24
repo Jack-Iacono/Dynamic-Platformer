@@ -43,7 +43,12 @@ if(hsp != 0){
 	momentum = h_speed;	
 }else{
 	if(momentum > 1.0 || momentum < -1.0){
-		momentum -= (momentum * 0.1);	
+		
+		if(place_meeting(x,y+1,obj_wall)){
+			momentum -= (momentum * 0.1);
+		}else{	
+			momentum -= (momentum * 0.025);
+		}
 	}else{
 		momentum = 0;	
 	}
