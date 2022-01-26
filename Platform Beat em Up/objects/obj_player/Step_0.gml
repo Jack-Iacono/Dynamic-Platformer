@@ -40,7 +40,7 @@ if(run){
 
 //Calculates Momentum
 if(hsp != 0){
-	momentum = h_speed;	
+	momentum = h_speed - hsp_move;	
 }else{
 	if(momentum > 1.0 || momentum < -1.0){
 		
