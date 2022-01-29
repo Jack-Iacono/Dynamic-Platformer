@@ -6,7 +6,7 @@ h_speed = x_pre - x_post;
 x_post = x_pre;
 
 //Runs Collision Check for moving platform
-moving_collide_h = collision_rectangle(x+ hitbox_offset_x,y + hitbox_offset_y,x - hitbox_offset_x,y - hitbox_offset_y, obj_moving_platform,false,false);
+moving_collide_h = collision_rectangle(x+ hitbox_offset_x,y + hitbox_offset_y,x - hitbox_offset_x,y, obj_moving_platform,false,false);
 moving_collide_v = instance_place(x,y+vsp,obj_moving_platform);
 
 //Moving Block Collisions
