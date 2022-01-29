@@ -41,3 +41,8 @@ if(moving_collide_v && y <= moving_collide_v.y){
 	vsp = 0 + grav;
 	show_debug_message(string(moving_collide_v.cur_v_speed));
 }
+
+//Handles being crushed
+if(collision_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y, obj_wall,false,false)){
+	room_restart();	
+}
