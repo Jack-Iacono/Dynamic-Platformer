@@ -6,8 +6,9 @@ h_speed = x_pre - x_post;
 x_post = x_pre;
 
 //Runs Collision Check for moving platform
-moving_collide_h = collision_rectangle(x + hitbox_offset_x,y + hitbox_offset_y,x - hitbox_offset_x,y, obj_moving_platform,false,false);
-moving_collide_v = collision_rectangle(x + hitbox_offset_x - 5,y + hitbox_offset_y,x - hitbox_offset_x + 5,y - hitbox_offset_y, obj_moving_platform,false,false);
+moving_collide_h = collision_rectangle(x + hitbox_offset_x, y + hitbox_offset_y - 4, x - hitbox_offset_x, y - hitbox_offset_y + 4, obj_moving_platform,false,false);
+moving_collide_v = collision_rectangle(x + hitbox_offset_x - 5, y + hitbox_offset_y,x - hitbox_offset_x + 5,y - hitbox_offset_y, obj_moving_platform,false,false);
+
 
 //Moving Block Collisions
 if(moving_collide_h){
@@ -35,11 +36,12 @@ if(moving_collide_v && y <= moving_collide_v.y){
 	//Moves player up to avoid getting stuck in platform
 	while(place_meeting(x,y,obj_moving_platform) && !place_empty(x,y+1,obj_wall)){
 		y--;
-	}	
+	}
+	
 }else if(moving_collide_v && y > moving_collide_v.y){
+	//Handles colliding with underside of a moving platform
 	y += moving_collide_v.cur_v_speed;
 	vsp = 0 + grav;
-	show_debug_message(string(moving_collide_v.cur_v_speed));
 }
 
 //Handles being crushed
