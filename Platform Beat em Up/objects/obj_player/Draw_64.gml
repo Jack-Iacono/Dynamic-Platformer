@@ -1,6 +1,7 @@
 /// @description Debugging Stuff
 
 draw_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y,true);
+draw_rectangle(x + hitbox_offset_x - 5,y + hitbox_offset_y,x - hitbox_offset_x + 5,y - hitbox_offset_y,true);
 
 draw_text(100,100, "Momentum: " + string(momentum));
 draw_text(100,150, "H_Speed: " + string(h_speed));
