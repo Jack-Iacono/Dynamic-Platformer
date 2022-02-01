@@ -44,6 +44,16 @@ if(moving_collide_v && y <= moving_collide_v.y){
 	vsp = 0 + grav;
 }
 
+//Stops moving if colliding with wall
+if(place_meeting(x + hsp_move, y, obj_wall)){
+	
+	while(!place_meeting(x + sign(hsp_move), y, obj_wall)){
+		x += sign(hsp_move);	
+	}
+	hsp_move = 0;
+	
+}
+
 //Handles being crushed
 if(collision_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y, obj_wall,false,false)){
 	room_restart();	

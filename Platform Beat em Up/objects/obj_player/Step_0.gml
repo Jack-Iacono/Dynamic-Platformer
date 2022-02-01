@@ -45,8 +45,10 @@ if(hsp != 0){
 	if(momentum > 1.0 || momentum < -1.0){
 		
 		if(place_meeting(x,y+1,obj_wall)){
+			//Momentum while grounded
 			momentum -= (momentum * 0.1);
 		}else{	
+			//momentum while in air
 			momentum -= (momentum * 0.025);
 		}
 	}else{

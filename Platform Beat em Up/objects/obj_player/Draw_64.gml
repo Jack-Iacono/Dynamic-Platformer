@@ -21,5 +21,5 @@ draw_text(100,250, "Accel_Speed: " + string(accel_speed));
 draw_text(100, 300, "Grounded: " + string(place_meeting(x,y+1,obj_wall)));
 draw_text(100, 350, "Vsp: " + string(vsp));
 draw_text(100, 400, "Hsp: " + string(hsp));
-draw_text(100, 450, "H Moving Collide: " + string(moving_collide_h));
+draw_text(100, 450, "Hsp_move: " + string(hsp_move));
 
