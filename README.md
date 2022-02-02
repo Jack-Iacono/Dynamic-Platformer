@@ -15,3 +15,5 @@ This projetc is a simple 2D platformer with no twists (not yet). The goal of thi
 - Moving platforms to jump on and interact with
 - Momentum system which will propel player even when not pressing the move button (things do not come to a hault instantly in real life, so why should they in my game? Answer, because I like challenging myself)
 - Squishing the player restarts the game
+- Some Animation (ain't great tho)
+- Scrolling Camera
