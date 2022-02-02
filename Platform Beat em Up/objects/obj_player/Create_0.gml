@@ -23,6 +23,9 @@ h_speed = 0;
 hsp_move = 0;
 vsp_move = 0;
 
+//Whether the player is grounded or not
+grounded = false;
+
 //Running animation curve
 run_curve = animcurve_get(curve_movement_accel);
 

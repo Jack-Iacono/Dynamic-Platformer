@@ -1,3 +1,3 @@
 /// @description Destroys if outside room
 
-//room_restart();
+room_restart();

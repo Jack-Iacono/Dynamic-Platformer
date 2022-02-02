@@ -1,5 +1,12 @@
 /// @description Some more collision
 
+//Calculates whether the player is grounded or not
+if(place_meeting(x,y+1, obj_wall)){
+	grounded = true;	
+}else{
+	grounded = false;	
+}
+
 //Calculates horizontal speed
 x_pre = x;
 h_speed = x_pre - x_post;
@@ -69,14 +76,18 @@ if(collision_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y
 
 
 //Animation Stuff
-if(hsp > 0){
+if(hsp > 0 && grounded){
 	image_speed = hsp / 3;
 	sprite_index = spr_player_run;
 	image_xscale = 1;
-}else if(hsp < 0){
+}else if(hsp < 0 && grounded){
 	image_speed = hsp / 3;
 	sprite_index = spr_player_run;
 	image_xscale = -1;
+}else if(h_speed > 0 && grounded){
+	
+}else if(h_speed < 0 && grounded){
+
 }else{
 	image_speed = 1;
 	sprite_index = spr_player_idle;	
