@@ -19,8 +19,9 @@ x_pre = 0;
 x_post = 0;
 h_speed = 0;
 
-//Not sure I remember, I'll get back to you
+//Need to intialize in order to check for collision
 hsp_move = 0;
+vsp_move = 0;
 
 //Running animation curve
 run_curve = animcurve_get(curve_movement_accel);

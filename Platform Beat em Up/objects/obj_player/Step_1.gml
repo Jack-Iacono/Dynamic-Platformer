@@ -30,11 +30,12 @@ if(moving_collide_h){
 //Moves based on platform
 if(moving_collide_v && y <= moving_collide_v.y){
 	
-	y_moving = (y - moving_collide_v.y) + moving_collide_v.y;
-	y = y_moving;
+	vsp_move = (y - moving_collide_v.y) + moving_collide_v.y;
+	y = vsp_move;
 	
 	//Moves player up to avoid getting stuck in platform
-	while(place_meeting(x,y,obj_moving_platform) && !place_empty(x,y+1,obj_wall)){
+	while(place_meeting(x,y,obj_moving_platform) && !place_empty(x,y+hitbox_offset_y,obj_wall) && place_empty(x,y-hitbox_offset_y,obj_wall)){
+		//This causes player ot warp through platforms
 		y--;
 	}
 	
@@ -42,6 +43,13 @@ if(moving_collide_v && y <= moving_collide_v.y){
 	//Handles colliding with underside of a moving platform
 	y += moving_collide_v.cur_v_speed;
 	vsp = 0 + grav;
+}
+
+//Moves out of floor if stuck from vertical platform
+if(place_meeting(x,y,obj_wall) && !(moving_collide_h || moving_collide_v)){
+	while(place_meeting(x,y,obj_wall)){
+		y--;	
+	}
 }
 
 //Stops moving if colliding with wall
@@ -53,6 +61,7 @@ if(place_meeting(x + hsp_move, y, obj_wall)){
 	hsp_move = 0;
 	
 }
+
 
 //Handles being crushed
 if(collision_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y, obj_wall,false,false)){
