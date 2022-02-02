@@ -62,8 +62,22 @@ if(place_meeting(x + hsp_move, y, obj_wall)){
 	
 }
 
-
 //Handles being crushed
 if(collision_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y, obj_wall,false,false)){
 	room_restart();	
+}
+
+
+//Animation Stuff
+if(hsp > 0){
+	image_speed = hsp / 3;
+	sprite_index = spr_player_run;
+	image_xscale = 1;
+}else if(hsp < 0){
+	image_speed = hsp / 3;
+	sprite_index = spr_player_run;
+	image_xscale = -1;
+}else{
+	image_speed = 1;
+	sprite_index = spr_player_idle;	
 }
