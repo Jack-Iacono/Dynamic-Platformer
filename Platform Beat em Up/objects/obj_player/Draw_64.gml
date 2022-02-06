@@ -28,5 +28,6 @@ draw_text(100, 400, "Hsp: " + string(hsp));
 draw_text(100, 450, "Hsp_move: " + string(hsp_move));
 draw_text(100, 500, "Vsp_move: " + string(vsp_move));
 draw_text(100, 550, "Colliding: " + string(place_meeting(x,y,obj_moving_platform)));
-draw_text(100, 600, "Colliding: " + string(!place_empty(x,y+1,obj_wall)));
+draw_text(100, 600, "Grounded: " + string(grounded));
+draw_text(100, 650, "Jumps: " + string(wall_jump_collide));
 

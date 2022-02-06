@@ -4,13 +4,6 @@
 right = keyboard_check(ord("D"));
 left = keyboard_check(ord("A"));
 
-//Jumps if on the ground
-if(place_meeting(x,y+1,obj_wall)){
-	up = keyboard_check_pressed(ord("W"));
-}else{
-	up = 0;
-}
-
 //Increments along accel curve given current speed
 if((right || left) && accel_pos < 1){
 	accel_pos += 0.025;
@@ -36,6 +29,33 @@ if(run){
 	hsp = (right - left) * walk_speed;
 	accel_speed = animcurve_channel_evaluate(walk_channel,accel_pos);
 	hsp *= accel_speed;
+}
+
+//Jumps if on the ground
+if(keyboard_check_pressed(ord("W"))){
+	if(grounded){
+		up = 1;
+		double_jumps_current = jump_max - 1;
+	}else if(wall_jump_collide && !grounded){ 
+		if(wall_jump_collide.x > x){
+			up = 1;
+			hsp = 0;
+			momentum = -walk_speed;
+		}else{
+			up = 1;
+			hsp = 0;
+			momentum = walk_speed;
+		}
+	}else if(double_jumps_current > 0 && !grounded){
+		up = 1;
+		if(up == 1){
+			double_jumps_current--;
+		}
+	}else{
+		up = 0;
+	}
+}else{
+	up = 0;	
 }
 
 //Calculates Momentum

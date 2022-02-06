@@ -7,6 +7,9 @@ if(place_meeting(x,y+1, obj_wall)){
 	grounded = false;	
 }
 
+//Determines if the player is colliding with a wall
+wall_jump_collide =collision_rectangle(x + hitbox_offset_x + 10, y + 4, x - hitbox_offset_x - 10, y - 4, obj_wall,false,false);
+
 //Calculates horizontal speed
 x_pre = x;
 h_speed = x_pre - x_post;

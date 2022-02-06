@@ -4,6 +4,9 @@
 hsp = 0.0;
 vsp = 0.0;
 
+//Sets Jump
+up = 0;
+
 //Amount of momentum that the player has
 momentum = 0;
 
@@ -33,3 +36,7 @@ walk_channel = animcurve_get_channel(run_curve, "player_walk");
 run_channel = animcurve_get_channel(run_curve, "player_run");
 
 accel_pos = 0;
+
+//Sets various player stats
+jump_max = 2;
+double_jumps_current = jump_max - 1;
