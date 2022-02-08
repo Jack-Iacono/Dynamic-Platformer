@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Animations",
+  "name": "script_print_text",
   "tags": [],
   "resourceType": "GMScript",
 }

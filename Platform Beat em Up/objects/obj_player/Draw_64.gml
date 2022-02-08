@@ -1,5 +1,9 @@
 /// @description Debugging Stuff
 
+//Sets alignment and font
+draw_set_halign(fa_left);
+draw_set_font(font_debug);
+
 //Draws Crushing zone
 draw_set_color(c_fuchsia);
 draw_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y,true);
@@ -27,7 +31,7 @@ draw_text(100, 350, "Vsp: " + string(vsp));
 draw_text(100, 400, "Hsp: " + string(hsp));
 draw_text(100, 450, "Hsp_move: " + string(hsp_move));
 draw_text(100, 500, "Vsp_move: " + string(vsp_move));
-draw_text(100, 550, "Colliding: " + string(place_meeting(x,y,obj_moving_platform)));
+draw_text(100, 550, "Up: " + string(up));
 draw_text(100, 600, "Grounded: " + string(grounded));
 draw_text(100, 650, "Jumps: " + string(wall_jump_collide));
 
