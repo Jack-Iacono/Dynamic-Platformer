@@ -3,6 +3,8 @@
 
 //DEals with setting filter while paused and changing back when unpaused
 if(global.pause_timer == 0 && global.pause){
+	global.time_regen_allowed = false;
+	alarm[0] = room_speed * time_regen_delay;
 	global.pause = false;
 	if(fx_filter_unpause != -1){
 		layer_set_fx("Filter",fx_filter_unpause);
@@ -12,7 +14,7 @@ if(global.pause_timer == 0 && global.pause){
 }else if(global.pause_timer > 0 && global.pause){
 	global.pause_timer -= (1 / room_speed) * time_deplete_speed;
 }else if(!global.pause){
-	if(global.pause_timer < max_time){
+	if(global.pause_timer < max_time && global.time_regen_allowed){
 		global.pause_timer += (1 / room_speed)	* time_regen_speed;
 	}else if(global.pause_timer > max_time){
 		global.pause_timer = max_time;	
