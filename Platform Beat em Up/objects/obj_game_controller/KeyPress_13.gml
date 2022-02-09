@@ -1,6 +1,6 @@
 /// @description Pauses and un-pauses game
 
-if(pause_timer > 0){
+if(global.pause_timer > 0){
 	if(!global.pause){
 		global.pause = true;
 		layer_set_fx("Filter",fx_filter_pause);

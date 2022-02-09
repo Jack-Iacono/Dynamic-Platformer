@@ -6,14 +6,7 @@ if(global.control){
 	//Takes Keyboard Input
 	right = keyboard_check(ord("D"));
 	left = keyboard_check(ord("A"));
-
-	//Increments along accel curve given current speed
-	if((right || left) && accel_pos < 1){
-		accel_pos += 0.025;
-	}else if(!right && !left){
-		accel_pos = 0;	
-	}
-
+	
 	//Running Switch
 	if(keyboard_check_pressed(vk_shift)){
 		if(run = 0){
@@ -21,6 +14,17 @@ if(global.control){
 		}else{
 			run = 0;
 		}
+	}
+	
+	//Increments along accel curve given current speed
+	if((right || left) && accel_pos < 1){
+		if(grounded){
+			accel_pos += grounded_acceleration;
+		}else{
+			accel_pos += air_acceleration;
+		}
+	}else if(!right && !left){
+		accel_pos = 0;	
 	}
 
 	//Calculates movement and acceleration
@@ -47,11 +51,15 @@ if(global.control){
 				up = 1;
 				hsp = 0;
 				momentum = -walk_speed;
+				accel_pos = 0;
+				accel_speed = 0;
 			}else{
 				//Wall jump right
 				up = 1;
 				hsp = 0;
 				momentum = walk_speed;
+				accel_pos = 0;
+				accel_speed = 0;
 			}
 			
 			alarm[0] = room_speed * wall_jump_cooldown;
@@ -66,11 +74,13 @@ if(global.control){
 			//No Jump
 			up = 0;
 		}
+		
 	}else{
 		//No jump
 		up = 0;	
 	}
 }else{
+	//No Jump
 	up = 0;
 }
 

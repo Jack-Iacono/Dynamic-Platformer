@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"spr_pause_timer","path":"sprites/spr_pause_timer/spr_pause_timer.yy",},"order":0,},
     {"id":{"name":"spr_background_city_leaving","path":"sprites/spr_background_city_leaving/spr_background_city_leaving.yy",},"order":0,},
     {"id":{"name":"obj_moving_platform_V","path":"objects/obj_moving_platform_V/obj_moving_platform_V.yy",},"order":3,},
     {"id":{"name":"tile_city_ground","path":"tilesets/tile_city_ground/tile_city_ground.yy",},"order":0,},
@@ -62,6 +63,7 @@
     {"folderPath":"folders/Sprites/Tile Sets.yy","order":3,"resourceVersion":"1.0","name":"Tile Sets","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Backgrounds _ Foregrounds.yy","order":5,"resourceVersion":"1.0","name":"Backgrounds _ Foregrounds","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Player Animations.yy","order":6,"resourceVersion":"1.0","name":"Player Animations","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/HUD Elements.yy","order":7,"resourceVersion":"1.0","name":"HUD Elements","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

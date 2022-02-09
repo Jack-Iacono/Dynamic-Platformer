@@ -2,6 +2,8 @@
 
 global.pause = false;
 global.control = true;
+global.pause_timer = max_time;
+global.debug_menu = false;
 
 //Sets filter
 //Takes filter from beginning of the game (may switch to on room start later)

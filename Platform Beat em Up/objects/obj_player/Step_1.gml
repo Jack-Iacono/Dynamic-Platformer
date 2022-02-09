@@ -83,25 +83,26 @@ if(!global.pause){
 	if(collision_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y, obj_wall,false,false)){
 		room_restart();	
 	}
-}
-
-//Animation Stuff
-if(hsp > 0 && grounded){
-	image_speed = hsp / 3;
-	sprite_index = spr_player_run;
-	image_xscale = 1;
-}else if(hsp < 0 && grounded){
-	image_speed = hsp / 3;
-	sprite_index = spr_player_run;
-	image_xscale = -1;
-}else if(h_speed > 0 && grounded){
 	
-}else if(h_speed < 0 && grounded){
+	//Animation Stuff
+	if(hsp > 0 && grounded){
+		image_speed = hsp / 3;
+		sprite_index = spr_player_run;
+		image_xscale = 1;
+	}else if(hsp < 0 && grounded){
+		image_speed = hsp / 3;
+		sprite_index = spr_player_run;
+		image_xscale = -1;
+	}else if(h_speed > 0 && grounded){
+	
+	}else if(h_speed < 0 && grounded){
 
-}else{
-	image_speed = 1;
-	sprite_index = spr_player_idle;	
+	}else{
+		image_speed = 1;
+		sprite_index = spr_player_idle;	
+	}
 }
+
 
 if(global.pause){
 	image_speed = 0;
