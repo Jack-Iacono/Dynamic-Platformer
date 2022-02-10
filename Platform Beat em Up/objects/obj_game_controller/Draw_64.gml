@@ -32,21 +32,14 @@ if(global.debug_menu){
 
 		//Draws Helpful Data
 		draw_set_color(c_white);
-		draw_text(100,100, "Momentum: " + string(momentum));
-		draw_text(100,150, "H_Speed: " + string(h_speed));
-		draw_text(100,200, "Accel_Pos: " + string(accel_pos));
-		draw_text(100,250, "Accel_Speed: " + string(accel_speed));
-		draw_text(100, 300, "Grounded: " + string(place_meeting(x,y+1,obj_wall)));
-		draw_text(100, 350, "Vsp: " + string(vsp));
-		draw_text(100, 400, "Hsp: " + string(hsp));
-		draw_text(100, 450, "Hsp_move: " + string(hsp_move));
-		draw_text(100, 500, "Vsp_move: " + string(vsp_move));
-		draw_text(100, 550, "Up: " + string(up));
-		draw_text(100, 600, "Grounded: " + string(grounded));
-		draw_text(100, 650, "Jumps: " + string(double_jumps_current));
+		draw_text(100, 200, "Vsp: " + string(vsp));
+		draw_text(100, 250, "Hsp: " + string(hsp));
+		draw_text(100,350, "Accel_Pos: " + string(accel_pos));
+		draw_text(100,400, "Accel_Speed: " + string(accel_speed));
+		draw_text(100,450, "Momentum: " + string(momentum));
+		draw_text(100,500, "H_Speed: " + string(h_speed));
+		draw_text(100, 600, "Hsp_move: " + string(hsp_move));
+		draw_text(100, 650, "Vsp_move: " + string(vsp_move));
 	}
-	
-	draw_text(100, 700, "Timer: " + string(int64((global.pause_timer / max_time) * 200)));
-	draw_text(100, 750, "Timer Regen: " + string(global.time_regen_allowed));
 
 }

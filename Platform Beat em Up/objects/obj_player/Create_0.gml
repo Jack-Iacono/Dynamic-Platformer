@@ -41,7 +41,7 @@ accel_pos = 0;
 hitbox_offset_x = (sprite_width / 2) + 1;
 hitbox_offset_y = (sprite_height / 2)  + 5;
 
-crush_offset_x = (sprite_width / 2) - 5;
-crush_offset_y = (sprite_height/ 2) - 5;
+crush_offset_x = (sprite_width / 2) - 2;
+crush_offset_y = (sprite_height/ 2) - 2;
 //Sets various player stats
 double_jumps_current = jump_max - 1;

@@ -37,6 +37,10 @@ if(global.control){
 		accel_speed = animcurve_channel_evaluate(walk_channel,accel_pos);
 		hsp *= accel_speed;
 	}
+	
+	if(sign(hsp) != sign(momentum)){
+		accel_pos = 0;
+	}
 
 	//All jump variants
 	if(keyboard_check_pressed(ord("W"))){
@@ -48,19 +52,33 @@ if(global.control){
 			
 			if(wall_jump_collide.x > x){
 				//Wall jump left
-				up = 1;
-				hsp = 0;
-				momentum = -walk_speed;
-				accel_pos = 0;
-				accel_speed = 0;
+				if(run){
+					hsp = -run_speed;
+					momentum = -run_speed;
+				}else{
+					hsp = -walk_speed;
+					momentum = -walk_speed;
+				}
+				left = true;
+
 			}else{
 				//Wall jump right
-				up = 1;
-				hsp = 0;
-				momentum = walk_speed;
-				accel_pos = 0;
-				accel_speed = 0;
+				if(run){
+					hsp = run_speed;
+					momentum = run_speed;
+				}else{
+					hsp = walk_speed;
+					momentum = walk_speed;
+				}
+				right = true;
 			}
+			
+			//Designates Jumping
+			up = 1;
+			
+			//Ensures that there is no choppiess when switch directions (Not really, but okay)
+			accel_pos = 1;
+			accel_speed = 1;
 			
 			alarm[0] = room_speed * wall_jump_cooldown;
 			global.control = false;

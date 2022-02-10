@@ -7,6 +7,7 @@
     {"id":{"name":"moving_platform_V","path":"paths/moving_platform_V/moving_platform_V.yy",},"order":1,},
     {"id":{"name":"spr_city","path":"sprites/spr_city/spr_city.yy",},"order":1,},
     {"id":{"name":"moving_platform_U","path":"paths/moving_platform_U/moving_platform_U.yy",},"order":0,},
+    {"id":{"name":"Sound1","path":"sounds/Sound1/Sound1.yy",},"order":0,},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":1,},
     {"id":{"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},"order":2,},
     {"id":{"name":"spr_background_test","path":"sprites/spr_background_test/spr_background_test.yy",},"order":1,},
@@ -71,7 +72,9 @@
   "TextureGroups": [
     {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"CopyToMask":3035461389054378222,"filePath":"datafiles","resourceVersion":"1.0","name":"'Za Warudo' Sound Effect.m4a","resourceType":"GMIncludedFile",},
+  ],
   "MetaData": {
     "IDEVersion": "2022.1.1.610",
   },
