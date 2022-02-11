@@ -1,6 +1,6 @@
 /// @description Some more collision
 
-if(!global.pause){
+if(!global.pause_player){
 	//Calculates whether the player is grounded or not
 	if(place_meeting(x,y+1, obj_wall)){
 		grounded = true;	
@@ -103,7 +103,6 @@ if(!global.pause){
 	}
 }
 
-
-if(global.pause){
+if(global.pause_player){
 	image_speed = 0;
 }

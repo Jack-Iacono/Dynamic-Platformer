@@ -39,7 +39,7 @@ if(global.control){
 	}
 	
 	if(sign(hsp) != sign(momentum)){
-		accel_pos = 0;
+		accel_pos = 0.5;
 	}
 
 	//All jump variants
@@ -102,7 +102,7 @@ if(global.control){
 	up = 0;
 }
 
-if(!global.pause){
+if(!global.pause_player){
 	//Gravity and Jump stuff
 	if(up != 0){
 		//Sets vsp to jump and negates gravity temporarily

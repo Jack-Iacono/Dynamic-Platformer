@@ -1,10 +1,11 @@
 /// @description Show Timer and Hud
 
 draw_set_halign(fa_right);
-//Draws Time in as numbers
-//print_data(view_wport[0] - HUD_edge_buffer, 100, c_white,c_black, font_HUD, 3, 2, string(global.pause_timer));
 
 draw_sprite_ext(spr_pause_timer, int64((global.pause_timer / max_time) * 199),view_wport[0] - pause_timer_edge_buffer_x, 0,1,1,0,c_white,1);
+
+//Draws Toggle Display
+draw_sprite_ext(pause_sprite_draw, 0,view_wport[0]-74, 10,1,1,0,c_white,1);
 
 //Debug Menu
 if(global.debug_menu){

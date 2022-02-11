@@ -20,3 +20,29 @@ if(global.pause_timer == 0 && global.pause){
 		global.pause_timer = max_time;	
 	}
 }
+
+//Assigns Which Pause is Active at a given time
+if(global.pause && global.pause_enable){
+	
+	if(pause_mode = 0){
+		global.pause_player = true;
+	}else if(pause_mode = 1){
+		global.pause_world = true;
+	}
+	
+}else{
+	
+	if(pause_mode = 0){
+		global.pause_player = false;
+	}else if(pause_mode = 1){
+		global.pause_world = false;
+	}
+	
+}
+
+//Sets HUD image
+if(pause_mode = 0){
+	pause_sprite_draw = spr_player_icon;
+}else if(pause_mode = 1){
+	pause_sprite_draw = spr_world_icon;
+}

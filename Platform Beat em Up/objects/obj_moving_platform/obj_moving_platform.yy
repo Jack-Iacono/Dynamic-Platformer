@@ -31,11 +31,13 @@
   "properties": [
     {"varType":5,"value":"moving_platform_U","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"path_name","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"5","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"plat_speed","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":5,"value":"curve_moving_platforms","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"accel_curve","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":4,"value":"\"U_path\"","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"accel_curve_variant","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Walls and Platforms",
+    "path": "folders/Objects/Walls and Platforms.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_moving_platform",

@@ -27,10 +27,11 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"path_name","path":"objects/obj_moving_platform/obj_moving_platform.yy",},"objectId":{"name":"obj_moving_platform","path":"objects/obj_moving_platform/obj_moving_platform.yy",},"value":"moving_platform_H","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"accel_curve_variant","path":"objects/obj_moving_platform/obj_moving_platform.yy",},"objectId":{"name":"obj_moving_platform","path":"objects/obj_moving_platform/obj_moving_platform.yy",},"value":"\"Horizontal_path\"","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Walls and Platforms",
+    "path": "folders/Objects/Walls and Platforms.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_moving_platform_H",
