@@ -18,7 +18,7 @@ if(!global.pause_world){
 	pre_x = x;
 
 	cur_v_speed = pre_y - post_y;
-	//cur_h_speed = pre_x - post_x;
+	cur_h_speed = pre_x - post_x;
 
 	post_y = pre_y;
 	post_x = pre_x;

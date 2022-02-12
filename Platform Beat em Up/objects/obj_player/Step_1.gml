@@ -11,7 +11,7 @@ if(!global.pause_player){
 	//Determines if the player is colliding with a wall
 	wall_jump_collide = collision_rectangle(x + hitbox_offset_x + 10, y + 4, x - hitbox_offset_x - 10, y - 4, obj_wall,false,false);
 
-	if(wall_jump_collide){
+	if(wall_jump_collide && !grounded && vsp > 0){
 		apply_friction = 1;
 	}else{
 		apply_friction = 0;
@@ -34,6 +34,7 @@ if(!global.pause_player){
 		if(x_moving_post = 0){
 			hsp_move = 0;
 		}else{
+			//Offset for moving player, not moved here
 			hsp_move = x_moving_pre - x_moving_post;
 		}
 	
@@ -75,6 +76,7 @@ if(!global.pause_player){
 		while(!place_meeting(x + sign(hsp_move), y, obj_wall)){
 			x += sign(hsp_move);	
 		}
+		
 		hsp_move = 0;
 	
 	}

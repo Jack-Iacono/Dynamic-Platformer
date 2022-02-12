@@ -152,6 +152,7 @@ if(!global.pause_player){
 		}
 
 		hsp = 0;
+		hsp_move = 0;
 	}
 
 	//Runs collision check for momentum
@@ -164,6 +165,7 @@ if(!global.pause_player){
 		}
 
 		momentum = 0;
+		hsp_move = 0;
 	}
 
 

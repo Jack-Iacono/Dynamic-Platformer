@@ -15,22 +15,6 @@ if(global.debug_menu){
 		draw_set_halign(fa_left);
 		draw_set_font(font_debug);
 
-		//Draws Crushing zone
-		draw_set_color(c_fuchsia);
-		draw_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y,true);
-
-		//Draws Y Collision Box
-		draw_set_color(c_lime);
-		draw_rectangle(x + hitbox_offset_x - 5,y + hitbox_offset_y,x - hitbox_offset_x + 5,y - hitbox_offset_y,true);
-
-		//Draws X Collision Box
-		draw_set_color(c_teal);
-		draw_rectangle(x + hitbox_offset_x,y + hitbox_offset_y - 5,x - hitbox_offset_x,y - hitbox_offset_y + 5, true);
-
-		//Draws Y collision stuff
-		draw_circle(x,y+hitbox_offset_y,10,false);
-		draw_circle(x,y-hitbox_offset_y,10,false);
-
 		//Draws Helpful Data
 		draw_set_color(c_white);
 		draw_text(100, 200, "Vsp: " + string(vsp));
