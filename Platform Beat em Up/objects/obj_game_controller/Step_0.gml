@@ -14,6 +14,8 @@ if(global.pause_timer == 0 && global.pause){
 }else if(global.pause_timer > 0 && global.pause){
 	global.pause_timer -= (1 / room_speed) * time_deplete_speed;
 }else if(!global.pause){
+	layer_clear_fx("Filter");
+	
 	if(global.pause_timer < max_time && global.time_regen_allowed){
 		global.pause_timer += (1 / room_speed)	* time_regen_speed;
 	}else if(global.pause_timer > max_time){
@@ -22,27 +24,37 @@ if(global.pause_timer == 0 && global.pause){
 }
 
 //Assigns Which Pause is Active at a given time
-if(global.pause && global.pause_enable){
+if(global.pause){
 	
-	if(pause_mode = 0){
+	if(global.pause_mode = 1){
 		global.pause_player = true;
-	}else if(pause_mode = 1){
+	}else if(global.pause_mode = 2){
 		global.pause_world = true;
 	}
 	
 }else{
 	
-	if(pause_mode = 0){
+	if(global.pause_mode = 0){
 		global.pause_player = false;
-	}else if(pause_mode = 1){
+		global.pause_world = false;
+	}else if(global.pause_mode = 1){
+		global.pause_player = false;
+	}else if(global.pause_mode = 2){
 		global.pause_world = false;
 	}
 	
 }
 
-//Sets HUD image
-if(pause_mode = 0){
-	pause_sprite_draw = spr_player_icon;
-}else if(pause_mode = 1){
-	pause_sprite_draw = spr_world_icon;
+//Shows Empty Meter while in Time Zone
+if(global.pause_mode = 0){
+	global.pause_timer = 0;	
+}
+
+//Sets HUD image for time option
+if(global.pause_mode = 0){
+	pause_sprite_draw = spr_icon_null;
+}else if(global.pause_mode = 1){
+	pause_sprite_draw = spr_icon_player;
+}else if(global.pause_mode = 2){
+	pause_sprite_draw = spr_icon_world;
 }

@@ -1,11 +1,11 @@
 /// @description Toggle Between Pause States
 
-if(!global.pause){
+if(!global.pause && global.pause_mode != 0){
 	
-	if(pause_mode < 1){
-		pause_mode++;
+	if(global.pause_mode < 2 && global.pause_mode > 0){
+		global.pause_mode++;
 	}else{
-		pause_mode = 0;
+		global.pause_mode = 1;
 	}
 	
 }

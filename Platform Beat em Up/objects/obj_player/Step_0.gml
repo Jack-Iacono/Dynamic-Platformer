@@ -103,6 +103,14 @@ if(global.control){
 }
 
 if(!global.pause_player){
+	//Collision with time_zone
+	if(place_meeting(x, y, obj_time_zone)){
+		global.pause_mode = 0;
+		global.pause = false;
+	}else if(!place_meeting(x, y, obj_time_zone) && global.pause_mode = 0){
+		global.pause_mode = 1;	
+	}
+	
 	//Gravity and Jump stuff
 	if(up != 0){
 		//Sets vsp to jump and negates gravity temporarily
@@ -120,14 +128,14 @@ if(!global.pause_player){
 	if(hsp != 0){
 		momentum = h_speed - hsp_move;	
 	}else{
-		if(momentum > 1.0 || momentum < -1.0){
+		if(momentum > 0.1 || momentum < -0.1){
 		
 			if(place_meeting(x,y+1,obj_wall)){
 				//Momentum while grounded
-				momentum -= (momentum * 0.1);
+				momentum -= (momentum * grounded_momentum_decrease);
 			}else{	
 				//momentum while in air
-				momentum -= (momentum * 0.025);
+				momentum -= (momentum * air_momentum_decrease);
 			}
 		}else{
 			momentum = 0;	
