@@ -13,9 +13,9 @@ momentum = 0;
 //Is the player running or not (1 and 0)
 run = 0;
 
-//Moving Platform Stuff
-x_moving_pre = 0;
-x_moving_post = 0;
+//Sets whther player is being pushed in the x direction
+x_push  = false;
+horizontally_aligned = false;
 
 //Calculating player speed in game
 x_pre = 0;
@@ -43,5 +43,6 @@ hitbox_offset_y = (sprite_height / 2)  + 5;
 
 crush_offset_x = (sprite_width / 2) - 5;
 crush_offset_y = (sprite_height/ 2) - 5;
+
 //Sets various player stats
 double_jumps_current = jump_max - 1;

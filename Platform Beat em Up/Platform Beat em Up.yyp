@@ -1,7 +1,6 @@
 {
   "resources": [
     {"id":{"name":"spr_pause_timer","path":"sprites/spr_pause_timer/spr_pause_timer.yy",},"order":0,},
-    {"id":{"name":"spr_background_city_leaving","path":"sprites/spr_background_city_leaving/spr_background_city_leaving.yy",},"order":0,},
     {"id":{"name":"obj_moving_platform_V","path":"objects/obj_moving_platform_V/obj_moving_platform_V.yy",},"order":2,},
     {"id":{"name":"tile_city_ground","path":"tilesets/tile_city_ground/tile_city_ground.yy",},"order":0,},
     {"id":{"name":"moving_platform_V","path":"paths/moving_platform_V/moving_platform_V.yy",},"order":1,},
@@ -33,9 +32,11 @@
     {"id":{"name":"spr_moving","path":"sprites/spr_moving/spr_moving.yy",},"order":2,},
     {"id":{"name":"obj_moving_platform_H","path":"objects/obj_moving_platform_H/obj_moving_platform_H.yy",},"order":1,},
     {"id":{"name":"spr_player_run","path":"sprites/spr_player_run/spr_player_run.yy",},"order":2,},
+    {"id":{"name":"spr_background_river","path":"sprites/spr_background_river/spr_background_river.yy",},"order":2,},
     {"id":{"name":"obj_time_zone","path":"objects/obj_time_zone/obj_time_zone.yy",},"order":9,},
     {"id":{"name":"spr_icon_player","path":"sprites/spr_icon_player/spr_icon_player.yy",},"order":1,},
     {"id":{"name":"script_print_text","path":"scripts/script_print_text/script_print_text.yy",},"order":0,},
+    {"id":{"name":"spr_background_sunset","path":"sprites/spr_background_sunset/spr_background_sunset.yy",},"order":3,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

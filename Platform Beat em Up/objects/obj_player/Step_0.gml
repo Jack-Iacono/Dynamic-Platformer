@@ -146,13 +146,12 @@ if(!global.pause_player){
 	if(place_meeting(x + hsp, y, obj_wall)){
 		
 		while(!place_meeting(x + sign(hsp), y, obj_wall)){
-		
+			
 			x += sign(hsp);
 		
 		}
 
 		hsp = 0;
-		hsp_move = 0;
 	}
 
 	//Runs collision check for momentum
@@ -165,9 +164,21 @@ if(!global.pause_player){
 		}
 
 		momentum = 0;
-		hsp_move = 0;
 	}
-
+	
+	//Negates movement if being pushed
+	if(x_push){
+		if(sign(hsp) = -1 * sign(hsp_move)){
+			momentum = 0;
+			hsp = 0;
+		}
+		
+		if(x > moving_collide.x && sign(hsp_move) = -1){
+			hsp_move = 0;	
+		}else if(x < moving_collide.x && sign(hsp_move) = 1){
+			hsp_move = 0;	
+		}
+	}
 
 	//Actually Moves the Player
 	if(hsp = 0){

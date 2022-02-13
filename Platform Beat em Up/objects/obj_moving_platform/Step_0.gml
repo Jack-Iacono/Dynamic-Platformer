@@ -24,4 +24,6 @@ if(!global.pause_world){
 	post_x = pre_x;
 }else{
 	path_speed = 0;
+	cur_h_speed = 0;
+	cur_v_speed = 0;
 }

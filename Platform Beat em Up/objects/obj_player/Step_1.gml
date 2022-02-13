@@ -23,67 +23,84 @@ if(!global.pause_player){
 	x_post = x_pre;
 
 	//Runs Collision Check for moving platform
-	moving_collide_h = collision_rectangle(x + hitbox_offset_x, y + hitbox_offset_y - 4, x - hitbox_offset_x, y - hitbox_offset_y + 4, obj_moving_platform,false,false);
-	moving_collide_v = collision_rectangle(x + hitbox_offset_x - 5, y + hitbox_offset_y,x - hitbox_offset_x + 5,y - hitbox_offset_y, obj_moving_platform,false,false);
-
-
-	//Moving Block Collisions
-	if(moving_collide_h){
-		x_moving_pre = moving_collide_h.x;
+	moving_collide = collision_rectangle(x + hitbox_offset_x, y + hitbox_offset_y, x - hitbox_offset_x, y - hitbox_offset_y, obj_moving_platform, false, false);
 	
-		if(x_moving_post = 0){
-			hsp_move = 0;
+	//Sets where player should be moved based on platform position
+	if(moving_collide){
+		
+		//Tells game whether player is on top or below platform (i.e. not on the sides)
+		if(x - hitbox_offset_x < moving_collide.x + (moving_collide.sprite_width / 2) && x + hitbox_offset_x > moving_collide.x - (moving_collide.sprite_width / 2)){
+			horizontally_aligned = true;
 		}else{
-			//Offset for moving player, not moved here
-			hsp_move = x_moving_pre - x_moving_post;
-		}
-	
-		x_moving_post = x_moving_pre;
-	}else{
-		hsp_move = 0;
-		x_moving_pre = 0;
-		x_moving_post = 0;
-	}
-
-	//Moves based on platform
-	if(moving_collide_v && y <= moving_collide_v.y){
-	
-		vsp_move = (y - moving_collide_v.y) + moving_collide_v.y;
-		y = vsp_move;
-	
-		//Moves player up to avoid getting stuck in platform
-		while(place_meeting(x,y,obj_moving_platform) && !place_empty(x,y+hitbox_offset_y,obj_wall) && place_empty(x,y-hitbox_offset_y,obj_wall)){
-			//This causes player ot warp through platforms
-			y--;
-		}
-	
-	}else if(moving_collide_v && y > moving_collide_v.y){
-		//Handles colliding with underside of a moving platform
-		y += moving_collide_v.cur_v_speed;
-		vsp = 0 + grav;
-	}
-
-	//Moves out of floor if stuck from vertical platform
-	if(place_meeting(x,y,obj_wall) && !(moving_collide_h || moving_collide_v)){
-		while(place_meeting(x,y,obj_wall)){
-			y--;	
-		}
-	}
-
-	//Stops moving if colliding with wall
-	if(place_meeting(x + hsp_move, y, obj_wall)){
-	
-		while(!place_meeting(x + sign(hsp_move), y, obj_wall)){
-			x += sign(hsp_move);	
+			horizontally_aligned = false;
 		}
 		
-		hsp_move = 0;
+		//Distance to move in x direction (only if not under platform)
+		if(y - hitbox_offset_y < moving_collide.y + (moving_collide.sprite_height / 2)){
+			hsp_move = moving_collide.cur_h_speed;
+			
+			//Shows whether the player is being pushed by a platform or not
+			if(y + (sprite_width / 2) >= moving_collide.y - (moving_collide.sprite_height / 2)){
+				x_push = true;
+			}else{
+				x_push = false;	
+			}
+			
+		}
+		
+		//Distance to move in y direction
+		if(horizontally_aligned){
+			if(y < moving_collide.y - (moving_collide.sprite_height / 2)){
+			
+				vsp_move = moving_collide.cur_v_speed;
+				y += vsp_move;
 	
+				//Moves player up to avoid getting stuck in platform
+				while(place_meeting(x,y,obj_moving_platform) && !place_empty(x,y+hitbox_offset_y,obj_wall) && place_empty(x,y-hitbox_offset_y,obj_wall)){
+					//This causes player to warp through platforms
+					y--;
+				}
+			
+			}else if(y > moving_collide.y + (moving_collide.sprite_height / 2)){
+				//Handles colliding with underside of a moving platform
+				y += moving_collide.cur_v_speed;
+				vsp = 0 + grav;
+			}
+		}
+		
+	}else{
+		hsp_move = 0;
+		vsp_move = 0;
+		
+		x_push = false;
+		
+		if(place_meeting(x,y,obj_wall)){
+			while(place_meeting(x,y,obj_wall)){
+				y--;	
+			}
+		}
+		
 	}
+
+
+	
+	//Vertical Collision, may be useless
+	if(place_meeting(x,y+vsp_move,obj_wall)){
+		
+		while(!place_meeting(x, y + sign(vsp_move),obj_wall)){
+			y += sign(vsp_move);	
+		}
+		
+		vsp_move = 0;
+		
+	}
+	
+	//Move the player to match the platform
+	y += vsp_move;
 
 	//Handles being crushed
 	if(collision_rectangle(x+ crush_offset_x,y + crush_offset_y,x - crush_offset_x,y - crush_offset_y, obj_wall,false,false)){
-		room_restart();	
+		//room_restart();	
 	}
 	
 	//Animation Stuff
