@@ -103,6 +103,7 @@ if(global.control){
 }
 
 if(!global.pause_player){
+	
 	//Collision with time_zone
 	if(place_meeting(x, y, obj_time_zone)){
 		global.pause_mode = 0;
@@ -143,6 +144,7 @@ if(!global.pause_player){
 	}
 
 	//Runs Collision for movement via input
+	//Change this so that player cannot go into moving platforms
 	if(place_meeting(x + hsp, y, obj_wall)){
 		
 		while(!place_meeting(x + sign(hsp), y, obj_wall)){
@@ -165,26 +167,32 @@ if(!global.pause_player){
 
 		momentum = 0;
 	}
-	
-	//Negates movement if being pushed
-	if(x_push){
-		if(sign(hsp) = -1 * sign(hsp_move)){
-			momentum = 0;
-			hsp = 0;
-		}
-		
-		if(x > moving_collide.x && sign(hsp_move) = -1){
-			hsp_move = 0;	
-		}else if(x < moving_collide.x && sign(hsp_move) = 1){
-			hsp_move = 0;	
-		}
-	}
 
+	if(x_push){
+	
+		if(sign(hsp) = -1 * sign(hsp_move)){
+			hsp = 0;
+			momentum = 0;
+		}else if(right_moving && sign(hsp) = -1){
+			hsp = 0;
+			momentum = 0;
+		}else if(right_moving && sign(hsp) = -1){
+			hsp = 0;
+			momentum = 0;
+		}
+	
+	}
+	
+	if(right_moving || left_moving){
+		hsp = 0;
+		momentum = 0;
+	}
+	
 	//Actually Moves the Player
 	if(hsp = 0){
-		x += momentum + hsp_move;
+		x += momentum;
 	}else{
-		x += hsp + hsp_move;
+		x += hsp;
 	}
 
 	//Vertical Collision

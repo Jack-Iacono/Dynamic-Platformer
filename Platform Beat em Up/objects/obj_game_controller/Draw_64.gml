@@ -19,19 +19,25 @@ if(global.debug_menu){
 		draw_set_color(c_white);
 		draw_text(100, 200, "Vsp: " + string(vsp));
 		draw_text(100, 250, "Hsp: " + string(hsp));
+		
 		draw_text(100,350, "Accel_Pos: " + string(accel_pos));
 		draw_text(100,400, "Accel_Speed: " + string(accel_speed));
 		draw_text(100,450, "Momentum: " + string(momentum));
 		draw_text(100,500, "H_Speed: " + string(h_speed));
+		
 		draw_text(100, 600, "Moving_Collide: " + string(moving_collide));
 		draw_text(100, 650, "Hsp_move: " + string(hsp_move));
 		draw_text(100, 700, "Vsp_move: " + string(vsp_move));
-		draw_text(100, 750, "X_Push: " + string(x_push));
-		draw_text(100, 800, "Align: " + string(horizontally_aligned));
-	}
-	
-	with(inst_5B5E00BB){
-		draw_text(300, 650, "Hspeed: " + string(cur_h_speed));
+		
+		if(moving_collide){
+			draw_text(300, 650, "Moving H_speed: " + string(moving_collide.cur_h_speed));
+			draw_text(300, 700, "Moving V_speed: " + string(moving_collide.cur_v_speed));
+		}
+		
+		draw_text(300, 750, "Right_Moving: " + string(right_moving));
+		draw_text(300, 800, "Left_Moving: " + string(left_moving));
+		draw_text(300, 850, "Above_Moving: " + string(above_moving));
+		draw_text(300, 900, "Below_moving: " + string(below_moving));
 	}
 
 }

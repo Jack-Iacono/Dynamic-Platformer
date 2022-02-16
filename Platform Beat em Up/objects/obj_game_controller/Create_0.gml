@@ -5,7 +5,7 @@ global.pause_player = false;
 global.pause_world = false;
 global.control = true;
 global.pause_timer = max_time;
-global.debug_menu = false;
+global.debug_menu = true;
 global.time_regen_allowed = true;
 global.pause_mode = 1;
 

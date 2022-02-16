@@ -13,9 +13,10 @@ momentum = 0;
 //Is the player running or not (1 and 0)
 run = 0;
 
-//Sets whther player is being pushed in the x direction
-x_push  = false;
-horizontally_aligned = false;
+right_moving = false;
+left_moving = false;
+above_moving = false;
+below_moving = false;
 
 //Calculating player speed in game
 x_pre = 0;
